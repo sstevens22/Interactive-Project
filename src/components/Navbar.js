@@ -51,11 +51,11 @@ function Navbar() {
                             Horoscope
                         </Link>
                     </li>
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <Link to='/donate' className='nav-links' onClick={closeMobileMenu}>
                             Donate
                         </Link>
-                    </li>
+                    </li> */}
                     <li className='nav-item'>
                         <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                             Sign up
