@@ -28,7 +28,7 @@ function Navbar() {
         <>
         <nav className='navbar'>
             <div className='navbar-container'>
-                <Link to='/' className='navbar-logo' onCLick=
+                <Link to='/' className='navbar-logo' onClick=
                 {closeMobileMenu}>
                     NMBR <i className='fas fa-moon' />
                 </Link>
@@ -42,12 +42,12 @@ function Navbar() {
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                        <Link to='/tarot' className='nav-links' onClick={closeMobileMenu}>
                             Tarot
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
+                        <Link to='/horoscope' className='nav-links' onClick={closeMobileMenu}>
                             Horoscope
                         </Link>
                     </li>
