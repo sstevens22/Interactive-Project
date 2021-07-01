@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User,  Horoscope} = require('../models');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 
@@ -9,7 +9,7 @@ const resolvers = {
             if(context.user) {
                 const userData = await User.findOne({_id: context.user._id})
                 .select('-__v-password')
-                .populate('zodiacSign');
+                // .populate('zodiacSign');
 
                 return userData;
             }
@@ -18,20 +18,19 @@ const resolvers = {
         users: async () => {
             return User.find()
             .select('-__v-password')
-            .populate('zodiacSign');
+            // .populate('zodiacSign');
         },
         user: async (parent, {username}) => {
             return User.findOne({username})
             .select('-__v-password')
-            .populate('zodiacSign');
+            // .populate('zodiacSign');
         }
     },
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
-            const token = signToken(user);
-          
-            return { token, user };
+
+            return user;
           },
           login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
@@ -48,7 +47,7 @@ const resolvers = {
           
             const token = signToken(user);
             return { token, user };
-          },
+          }
     }
 }
 module.exports = resolvers;

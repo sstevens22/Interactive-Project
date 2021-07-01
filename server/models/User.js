@@ -1,4 +1,5 @@
-const { Schema, model} = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema, model} = mongoose;
 const bcrypt = require('bcrypt');
 
 const currentDate = new Date()
@@ -26,13 +27,12 @@ const userSchema = new Schema(
             type: Date,
             default: Date.now,
             get: (createdAtVal) => currentDate.getDate(createdAtVal)
-        },
-        zodiacSign:[
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Horoscope'
-            }
-        ]
+        }
+    },
+    {
+        toJSON: {
+          getters: true
+        }
     }
 );
 // set up pre-save middleware to create password
@@ -48,10 +48,10 @@ userSchema.pre('save', async function(next) {
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function(password) {
-    return bcrypt.compare(password, this.password);
+    return await bcrypt.compare(password, this.password);
   };
 
-const User = model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
 //username
@@ -61,3 +61,9 @@ module.exports = User;
 //token
 //zodiac sign []
 
+// zodiacSign:[
+//     {
+//         type: Schema.Types.ObjectId,
+//         ref: 'Horoscope'
+//     }
+// ]
