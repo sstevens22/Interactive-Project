@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import DailyHoroscope from "../DailyHoroscope";
 // import ZodiacSearch from "../FindZodiac";
-import DailyHoroscope from "../DailyHoroscope";
 import "../../App.css";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import HoroscopeApi from "aztro-js";
 // Aries,Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces
 //add value for each sign
@@ -72,15 +71,16 @@ function Horoscope() {
   ]);
 
  const [currentSign, setCurrentSign] = useState(null);
- const { value } = useParams();
- const handleButton = useEffect(null);
+//  const { value } = useParams();
+ const handleButton = event => {
+     const { sign, value } = event.target;
 
-useEffect(
-    handleButton = (e) => {
-        setCurrentSign = e.target.value
-    },
+     setCurrentSign({
+         ...currentSign,
+         [sign]: value
+     });
+ };
 
-)
 
   return (
     <div>

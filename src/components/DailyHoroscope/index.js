@@ -1,12 +1,14 @@
-import React, { Component } from "react"; 
+import React from "react"; 
+// import Horoscope from "../pages/Horoscope"
+import { Link } from 'react-router-dom';
 
 // Aries,Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces
 //need to pass through button class & selection selectZodiac
 function DailyHoroscope(props) {
     const {
         sign = [],
-        setCurrentSign,
-        currentSign,
+        // setCurrentSign,
+        // currentSign,
     } = props;
 
     const URL = 'https://aztro.sameerkumar.website/?sign=' + {sign} + '&day=today';
@@ -14,52 +16,64 @@ function DailyHoroscope(props) {
         method: 'POST'
     }).then(response => response.json())
     .then(function(data) {
-
-        //map over a link to value in array
-        switch (data) {
-        case "aries":
+        console.log(data)
+        return(
             <div>
-            <h2>{currentSign.zodiac}</h2>
-            <span onClick={() => {
-                setCurrentSign(sign);
-            }}></span>
-            {/* <p>{json.description}</p> */}
+                {sign.map((sign, i) => ( 
+                    <div key={sign[i]}>
+                   <Link to={`/Horoscope/${sign.value}`}>
+                    <p>${data.sign.description}</p>
+                   </Link>
+                   </div>
+                ))}
             </div>
-        break;
-        case "taurus":
+        )
 
-        break;
-        case "gemini":
+        // //map over a link to value in array
+        // switch (data) {
+        // case "aries":
+        //     <div>
+        //     <h2>{currentSign.zodiac}</h2>
+        //     <span onClick={() => {
+        //         setCurrentSign(sign);
+        //     }}></span>
+        //     {/* <p>{json.description}</p> */}
+        //     </div>
+        // break;
+        // case "taurus":
 
-        break;
-        case "cancer":
+        // break;
+        // case "gemini":
 
-        break;
-        case "leo":
+        // break;
+        // case "cancer":
 
-        break;
-        case "virgo":
+        // break;
+        // case "leo":
+
+        // break;
+        // case "virgo":
         
-        break;
-        case "libra":
+        // break;
+        // case "libra":
 
-        break;
-        case "scorpio":
+        // break;
+        // case "scorpio":
 
-        break;
-        case "sagittarius":
+        // break;
+        // case "sagittarius":
 
-        break;
-        case "capricorn":
+        // break;
+        // case "capricorn":
 
-        break;
-        case "aquarius":
+        // break;
+        // case "aquarius":
 
-        break;
-        case "pisces":
+        // break;
+        // case "pisces":
 
-        break;
-        }
+        // break;
+        // }
     });
   };
 
