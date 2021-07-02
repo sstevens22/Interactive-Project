@@ -1,33 +1,53 @@
-import React from "react"; 
+import React, {Component } from "react"; 
 // import Horoscope from "../pages/Horoscope"
 import { Link } from 'react-router-dom';
+
 
 // Aries,Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces
 //need to pass through button class & selection selectZodiac
 function DailyHoroscope(props) {
     const {
         sign = [],
-        // setCurrentSign,
-        // currentSign,
+        setCurrentSign,
+        currentSign,
     } = props;
 
-    const URL = 'https://aztro.sameerkumar.website/?sign=' + {sign} + '&day=today';
-    fetch(URL, {
-        method: 'POST'
-    }).then(response => response.json())
-    .then(function(data) {
-        console.log(data)
+    class Aztro extends Component {
+        constructor(props){
+            super(props);
+            this.state = {
+              json: {}
+            }
+        }
+
+        componentDidMount () {
+            const URL = 'https://aztro.sameerkumar.website/?sign=' + {sign} + '&day=today';
+            fetch(URL, {
+                method: 'POST'
+            }).then(response => response.json())
+            .then(json => { this.setState({json}); });
+        }
+
+    // const URL = 'https://aztro.sameerkumar.website/?sign=' + {sign} + '&day=today';
+    // fetch(URL, {
+    //     method: 'POST'
+    // }).then(response => response.json())
+    // .then(function(data) {
+    //     console.log(data)
+    render() {
         return(
             <div>
                 {sign.map((sign, i) => ( 
                     <div key={sign[i]}>
                    <Link to={`/Horoscope/${sign.value}`}>
-                    <p>${data.sign.description}</p>
+                    <p>${this.state.json.description}</p>
                    </Link>
                    </div>
                 ))}
             </div>
         )
+    }
+       
 
         // //map over a link to value in array
         // switch (data) {
@@ -74,7 +94,7 @@ function DailyHoroscope(props) {
 
         // break;
         // }
-    });
+    };
   };
 
   export default DailyHoroscope;

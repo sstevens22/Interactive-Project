@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import DailyHoroscope from "../DailyHoroscope";
+import DailyHoroscope from "../DailyHoroscope";
 // import ZodiacSearch from "../FindZodiac";
 import "../../App.css";
 // import { useParams } from "react-router-dom";
@@ -89,6 +89,7 @@ function Horoscope() {
       {/* e.target value and map */}
       {sign.map((sign) => (
           <button onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+        // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
     </div>
   );
