@@ -8,10 +8,17 @@ type User {
     createdAt: String
 }
 
+type Horoscope {
+    _id: ID
+    zodiacSign: String
+    zodiacDate: String
+}
+
 type Query {
     me: User
     users: [User]
     user(username: String!): User
+    horoscope(_id: ID!): Horoscope
 }
 
 type Mutation {
@@ -21,7 +28,7 @@ type Mutation {
 
 type Auth {
     token: ID!
-    user: [User]
+    user: User
   }
 `;
 
