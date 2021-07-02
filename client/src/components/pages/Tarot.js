@@ -29,7 +29,10 @@ fetch("https://tarot.p.rapidapi.com/render_form/tarot-three-card", {
 }); 
 
 return(
-    <h1 className='tarot'>TAROT</h1>
+    <div className='tarot-container'>
+            <video src="/videos/Astro.mp4" autoPlay loop muted />
+            <h1>Tarot</h1>
+            </div>
 )
 
 };

@@ -84,7 +84,10 @@ function Horoscope() {
 
   return (
     <div>
-      <h1 className="horoscope">HOROSCOPE</h1>
+       <div className='horoscope-container'>
+            <video src="/videos/Astro.mp4" autoPlay loop muted />
+            <h1>Horoscope</h1>
+            </div>
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
       {sign.map((sign) => (
