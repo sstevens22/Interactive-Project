@@ -23,7 +23,13 @@ const resolvers = {
             return User.findOne({username})
             .select('-__v-password')
             // .populate('zodiacSign');
-        }
+        },
+        // horoscope: async () => {
+        //   return Horoscope.find()
+        // },
+        // horoscope: async () => {
+        //   return Horoscope.findOne()
+        // }
     },
     Mutation: {
         addUser: async (parent, args) => {

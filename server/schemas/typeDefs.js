@@ -8,17 +8,10 @@ type User {
     createdAt: String
 }
 
-type Horoscope {
-    _id: ID
-    zodiacSign: String
-    zodiacDate: String
-}
-
 type Query {
     me: User
     users: [User]
     user(username: String!): User
-    horoscope(_id: ID!): Horoscope
 }
 
 type Mutation {
@@ -36,3 +29,11 @@ module.exports = typeDefs;
 
 //zodiacSign: [Horoscope]
 
+//type Horoscope {
+//     _id: ID
+//     zodiacSign: String
+//     zodiacDate: String
+// }
+
+//for type query:
+//horoscope(_id: ID!): Horoscope
