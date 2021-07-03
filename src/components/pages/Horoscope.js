@@ -70,30 +70,39 @@ function Horoscope() {
     },
   ]);
 
- const [currentSign, setCurrentSign] = useState(null);
+
+ const [currentSign, setCurrentSign] = useState('');
 //  const { value } = useParams();
  const handleButton = event => {
-     const { sign, value } = event.target;
+     const { zodiac, value } = event.target;
 
      setCurrentSign({
          ...currentSign,
-         [sign]: value
+         [zodiac]: value
+
+         
      });
+     console.log('clicked');
+    //  console.log(sign.zodiac)
+     console.log(event.target.zodiac)
  };
 
 
   return (
     <div>
       <h1 className="horoscope">HOROSCOPE</h1>
+      <h2>Click your sign to read your daily horoscope</h2>
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
       {sign.map((sign) => (
           <button onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+          
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
+      <DailyHoroscope />
     </div>
-  );
+  )
+  
 }
 
-
-export default Horoscope;
+export default Horoscope ;
