@@ -7,11 +7,13 @@ import Tarot from './components/pages/Tarot';
 import Horoscope from './components/pages/Horoscope';
 import SignUp from './components/pages/SignUp';
 import Donate from'./components/pages/Donate';
+import Store from './Store';
 
 
 function App() {
   return (
     <>
+    <Store>
     <Router>
      <Navbar />
      <Switch>
@@ -23,6 +25,7 @@ function App() {
        <Route path='/sign-up' components={SignUp} />
      </Switch>
      </Router>
+     </Store>
     </>
   );
 }

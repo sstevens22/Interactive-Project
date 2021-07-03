@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import DailyHoroscope from "../DailyHoroscope";
+import { Context } from '../../Store';
 // import ZodiacSearch from "../FindZodiac";
 import "../../App.css";
 // import { useParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import "../../App.css";
 function Horoscope() {
   const [sign] = useState([
     {
-        zodiac: "Aries",
+        zodiac: "aries",
         icon: "",
         value: 0
     },
@@ -72,19 +73,18 @@ function Horoscope() {
 
 
  const [currentSign, setCurrentSign] = useState('');
+ const [state, setState] = useContext(Context);
 //  const { value } = useParams();
+// console.log(state.zodiacsign);
  const handleButton = event => {
-     const { zodiac, value } = event.target;
 
-     setCurrentSign({
-         ...currentSign,
-         [zodiac]: value
-
-         
-     });
-     console.log('clicked');
+    setState({
+        
+        "zodiacsign" : event.target.value
+     } )
+     
     //  console.log(sign.zodiac)
-     console.log(event.target.zodiac)
+    //  console.log(state.zodiacsign)
  };
 
 
@@ -95,14 +95,14 @@ function Horoscope() {
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
       {sign.map((sign) => (
-          <button onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+          <button key={sign.value} value={sign.zodiac} onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
           
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
-      <DailyHoroscope />
+      <DailyHoroscope sign={state.zodiacsign} />
     </div>
   )
   
 }
 
-export default Horoscope ;
+export default Horoscope;
