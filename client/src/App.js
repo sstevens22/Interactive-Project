@@ -8,6 +8,7 @@ import Horoscope from './components/pages/Horoscope';
 import SignUp from './components/pages/SignUp';
 import Donate from'./components/pages/Donate';
 import Store from './Store';
+require("dotenv").config();
 
 
 function App() {
