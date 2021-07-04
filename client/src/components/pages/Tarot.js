@@ -6,6 +6,7 @@ const startTarot = document.getElementById("#startTarot");
 function Tarot() {
     const [apiResponse, setApiResponse] = useState();
 
+<<<<<<< HEAD
     useEffect(() => {
         if(!apiResponse === apiResponse)
         return apiCall();
@@ -24,6 +25,14 @@ function Tarot() {
   });
   };
   console.log(apiResponse);
+=======
+return(
+    <div className='tarot-container'>
+            <video src="/videos/Astro.mp4" autoPlay loop muted />
+            <h1>Tarot</h1>
+            </div>
+)
+>>>>>>> c403e210141e857f0732ec27dc8150528c849b32
 
   return(
     <div>

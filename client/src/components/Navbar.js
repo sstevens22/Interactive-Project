@@ -30,7 +30,7 @@ function Navbar() {
             <div className='navbar-container'>
                 <Link to='/' className='navbar-logo' onClick=
                 {closeMobileMenu}>
-                    NMBR <i className='fas fa-moon' />
+                    FATE <i className='fas fa-moon' />
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

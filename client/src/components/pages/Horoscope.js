@@ -95,8 +95,15 @@ const handleButton = event => {
 
   return (
     <div>
+<<<<<<< HEAD
       <h1 className="horoscope">HOROSCOPE</h1>
       <h2>Click your sign to read your daily horoscope</h2>
+=======
+       <div className='horoscope-container'>
+            <video src="/videos/Astro.mp4" autoPlay loop muted />
+            <h1>Horoscope</h1>
+            </div>
+>>>>>>> c403e210141e857f0732ec27dc8150528c849b32
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
       {sign.map((sign) => (
