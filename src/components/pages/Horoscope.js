@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DailyHoroscope from "../DailyHoroscope";
 import { Context } from '../../Store';
 // import ZodiacSearch from "../FindZodiac";
@@ -76,7 +76,13 @@ function Horoscope() {
  const [state, setState] = useContext(Context);
 //  const { value } = useParams();
 // console.log(state.zodiacsign);
- const handleButton = event => {
+
+//bring back in for horoscope
+// useEffect(() => {
+//  document.button.onClick= handleButton(e)
+// }, [])
+
+const handleButton = event => {
 
     setState({
         
@@ -86,7 +92,6 @@ function Horoscope() {
     //  console.log(sign.zodiac)
     //  console.log(state.zodiacsign)
  };
-
 
   return (
     <div>

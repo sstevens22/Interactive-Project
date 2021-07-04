@@ -1,37 +1,46 @@
-// // import React from "react";
+import React, {useEffect, useState} from "react";
 
 // import { render } from "react-dom";
 
-// // const startTarot = document.getElementById('#startTarot')
+// const startTarot = document.getElementById('#startTarot')
 
-// function TarotDraw() {
+function TarotDraw() {
+//     const [apiResponse, setApiResponse] = useState();
 //   fetch("https://tarot.p.rapidapi.com/render_form/tarot-three-card", {
 //     method: "GET",
 //     headers: {
 //       "x-rapidapi-key": process.env.REACT_APP_TAROT_API_KEY,
 //       "x-rapidapi-host": "tarot.p.rapidapi.com",
 //     },
-//   }).then((response) => {
-//     console.log(response);
-//     return response.json();
-//   });
-//   //     // // .then(data => {
-//   //     // //     const tarotCard = document.createElement("div")
-//   //     // //     $("startTarot").onclick() = () => {
+//   }).then((response) => response.json())
+//     .then((json) => {
+//         setApiResponse(json);
+//     });
+  
 
-//   //     // //     }
-//   const responseForm = (
+// console.log(apiResponse);
+  //     // // .then(data => {
+  //     // //     const tarotCard = document.createElement("div")
+  //     // //     $("startTarot").onclick() = () => {
+
+  //     // //     }
+  //   const responseForm = (
+  //     <div>
+  //       <form>{response.body}</form>
+  //     </div>
+  //   );
+  //   ReactDOM.render(responseForm);
+
+//   return (
 //     <div>
-//       <form>{response.body}</form>
+//       <form>{apiResponse.body.data}</form>
 //     </div>
 //   );
-//   ReactDOM.render(responseForm);
+  //     // // })
+  //     // .catch(err => {
+  //     //     console.error(err);
+}
 
-//   //     // // })
-//   //     // .catch(err => {
-//   //     //     console.error(err);
-// }
+// TarotDraw();
 
-// // TarotDraw();
-
-// export default TarotDraw;
+export default TarotDraw;
