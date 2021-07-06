@@ -7,6 +7,7 @@ import Tarot from './components/pages/Tarot';
 import Horoscope from './components/pages/Horoscope';
 import SignUp from './components/pages/SignUp';
 import Donate from'./components/pages/Donate';
+import Login from './components/pages/Login';
 import Store from './Store';
 require("dotenv").config();
 
@@ -23,6 +24,7 @@ function App() {
        <Route path='/horoscope' component={Horoscope} />
        <Route path='/donate' component={Donate} />
        <Route path='/sign-up' component={SignUp} />
+       <Route path='/login' component={Login}/>
      </Switch>
      </Router>
      </Store>
