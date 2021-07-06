@@ -1,34 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../../utils/mutations';
 // import '../HeroSection.css';
+import Auth from '../../utils/auth';
 
-function SignUp() {
+const SignUp = () => {
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  }; 
+      
     return (
         <div className='signup-container'>
             <video src="/videos/Astro.mp4" autoPlay loop muted />
             <h1>Sign Up</h1>
             <div className="container my-1">
       
-      <form >
+      <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="username">Username:</label>
           <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            // onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            // onChange={handleChange}
+            placeholder="Username"
+            name="username"
+            type="username"
+            id="username"
+            value={formState.username}
+            onChange={handleChange}
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -38,7 +59,8 @@ function SignUp() {
             name="email"
             type="email"
             id="email"
-            // onChange={handleChange}
+            value={formState.email}
+            onChange={handleChange}
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -48,7 +70,8 @@ function SignUp() {
             name="password"
             type="password"
             id="pwd"
-            // onChange={handleChange}
+            value={formState.password}
+            onChange={handleChange}
           />
         </div>
         <div className="flex-row flex-end">
@@ -60,6 +83,7 @@ function SignUp() {
         ← Go to Login
       </Link>
       </form>
+      {error && <div>Signup failed</div>}
     </div>
             </div>
             
