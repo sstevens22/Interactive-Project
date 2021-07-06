@@ -106,6 +106,7 @@ const handleButton = event => {
           
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
+     
       <DailyHoroscope sign={state.zodiacsign} />
       </p>
       </div>

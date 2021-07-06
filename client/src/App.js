@@ -9,6 +9,7 @@ import SignUp from './components/pages/SignUp';
 import Donate from'./components/pages/Donate';
 import Login from './components/pages/Login';
 import Store from './Store';
+require("dotenv").config();
 
 
 function App() {

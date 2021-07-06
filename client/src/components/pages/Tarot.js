@@ -3,15 +3,26 @@ import React, { useState, useEffect } from "react";
 // import { render } from '@testing-library/react';
 const startTarot = document.getElementById("#startTarot");
 
+function video(){
+  return(
+    <div className='tarot-container'>
+            <video src="/videos/Astro.mp4" autoPlay loop muted />
+            <h1>Tarot</h1>
+            </div>
+)
+}
+video();
+
 function Tarot() {
     const [apiResponse, setApiResponse] = useState();
 
     useEffect(() => {
-        if(!apiResponse === apiResponse)
-        return apiCall();
-    })
+        // if(!apiResponse === apiResponse)
+        apiCall();
+    },[])
   // // <button id="startTarot"></button>
   const apiCall = () => {
+    
   fetch("https://tarot.p.rapidapi.com/render_form/tarot-three-card", {
     method: "GET",
     headers: {
@@ -20,21 +31,16 @@ function Tarot() {
     },
   }).then((response) => response.json())
   .then((json) => {
+    console.log(json);
       setApiResponse(json);
   });
   };
-  console.log(apiResponse);
-return(
-    <div className='tarot-container'>
-            <video src="/videos/Astro.mp4" autoPlay loop muted />
-            <h1>Tarot</h1>
-            </div>
-)
+  // console.log(apiResponse);
 
   return(
     <div>
       <h1 className="tarot">TAROT</h1>
-      {/* <div>{apiResponse.body.data}</div> */}
+      {apiResponse? <div dangerouslySetInnerHTML={{__html: apiResponse.data}}></div>: <div>Loading...</div>}
     </div>
   );
 }
