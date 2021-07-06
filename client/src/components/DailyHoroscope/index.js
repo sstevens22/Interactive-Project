@@ -1,36 +1,29 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from '../../Store';
-// import Horoscope from "../pages/Horoscope"
-// import { Link } from 'react-router-dom';
+
 import Horoscope from "../pages/Horoscope";
 
 // Aries,Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces
-//need to pass through button class & selection selectZodiac
 
-// this needs to be somewhere to bring in sign <Horoscope sign={sign} />
 
-// const currentDate = new Date() render currentDate at top of page
+
+
 function DailyHoroscope({sign}) {
-  // class DailyHoroscope extends Component {
-  // constructor(props){
-  // super(props);
-  // this.state = {
-  //     // sign : [],
-  //   json: {},
 
-  // }
   const [currentSign, setSign] = useState();
  
 const [state, setState] = useContext(Context);
 const [previousSign, setPreviousSign] = useState(state);
   // }
   // console.log(typeof state.zodiacsign);
+
+  
   
   useEffect(() => {
         apiCall(state.zodiacsign);
   }, [state]);
   const apiCall = (searchSign) => {
-    // componentDidMount = (props) => {
+   
 // console.log(searchSign);
     // const URL = `https://aztro.sameerkumar.website/?sign=${state.zodiacsign}&day=today`;
     const URL = 'https://aztro.sameerkumar.website/?sign=' + searchSign + '&day=today';
@@ -44,20 +37,19 @@ const [previousSign, setPreviousSign] = useState(state);
       });
   };
  
-  // }
-  //    render(){
+
+
   return (
     <div>
         {!currentSign ? <div>Loading</div> : <div>
-      {/* <Horoscope sign={sign} /> */}
        Current Date: {currentSign.date_range} <br />
-                  {/* Compatibility: {this.state.json.compatibility} <br />
-                  Lucky Number: {this.state.json.lucky_number} <br />
-                  Lucky Time: {this.state.json.lucky_time} <br />
-                  Color: {this.state.json.color} <br />
-                  Date Range: {this.state.json.date_range} <br />
-                  Mood: {this.state.json.mood} <br />*/}
-                  Description: {currentSign.description} <br /> 
+                  Compatibility: {currentSign.compatibility} <br />
+                  Lucky Number: {currentSign.lucky_number} <br />
+                  Lucky Time: {currentSign.lucky_time} <br />
+                  Color: {currentSign.color} <br />
+                  {/* Date Range: {currentSign.date_range} <br /> */}
+                  Mood: {currentSign.mood} <br />
+                  Daily Horoscope: {currentSign.description} <br /> 
               </div>  }
     </div>
   );
