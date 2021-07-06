@@ -94,22 +94,21 @@ const handleButton = event => {
  };
 
   return (
-    <div>
-      <h1 className="horoscope">HOROSCOPE</h1>
-      <h2>Click your sign to read your daily horoscope</h2>
        <div className='horoscope-container'>
             <video src="/videos/Astro.mp4" autoPlay loop muted />
-            <h1>Horoscope</h1>
-            </div>
+            <h1>Horoscope</h1> 
+      <h2>Click your sign to read your daily horoscope</h2> 
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
+      <p>
       {sign.map((sign) => (
           <button key={sign.value} value={sign.zodiac} onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
           
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
       <DailyHoroscope sign={state.zodiacsign} />
-    </div>
+      </p>
+      </div>
   )
   
 }
