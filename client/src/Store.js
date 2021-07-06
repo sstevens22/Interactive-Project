@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const initialState = {
-    zodiacsign: 'aries'
+    zodiacsign: ''
     //add other constant like sign in
 }
 
