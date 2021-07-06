@@ -24,14 +24,14 @@ function DailyHoroscope({sign}) {
 const [state, setState] = useContext(Context);
 const [previousSign, setPreviousSign] = useState(state);
   // }
-  console.log(typeof state.zodiacsign);
+  // console.log(typeof state.zodiacsign);
   
   useEffect(() => {
         apiCall(state.zodiacsign);
-  }, []);
+  }, [state]);
   const apiCall = (searchSign) => {
     // componentDidMount = (props) => {
-console.log(searchSign);
+// console.log(searchSign);
     // const URL = `https://aztro.sameerkumar.website/?sign=${state.zodiacsign}&day=today`;
     const URL = 'https://aztro.sameerkumar.website/?sign=' + searchSign + '&day=today';
     fetch(URL, {
@@ -40,9 +40,10 @@ console.log(searchSign);
       .then((response) => response.json())
       .then((json) => {
         setSign(json);
+        console.log(currentSign);
       });
   };
-  console.log(currentSign);
+ 
   // }
   //    render(){
   return (
@@ -55,8 +56,8 @@ console.log(searchSign);
                   Lucky Time: {this.state.json.lucky_time} <br />
                   Color: {this.state.json.color} <br />
                   Date Range: {this.state.json.date_range} <br />
-                  Mood: {this.state.json.mood} <br />
-                  Description: {this.state.json.description} <br /> */}
+                  Mood: {this.state.json.mood} <br />*/}
+                  Description: {currentSign.description} <br /> 
               </div>  }
     </div>
   );

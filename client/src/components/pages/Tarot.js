@@ -22,7 +22,7 @@ function Tarot() {
     },[])
   // // <button id="startTarot"></button>
   const apiCall = () => {
-    console.log(process.env.REACT_APP_TAROT_API_KEY)
+    
   fetch("https://tarot.p.rapidapi.com/render_form/tarot-three-card", {
     method: "GET",
     headers: {
