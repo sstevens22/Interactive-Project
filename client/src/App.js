@@ -7,22 +7,24 @@ import Tarot from './components/pages/Tarot';
 import Horoscope from './components/pages/Horoscope';
 import SignUp from './components/pages/SignUp';
 import Donate from'./components/pages/Donate';
+import Store from './Store';
 
 
 function App() {
   return (
     <>
+    <Store>
     <Router>
      <Navbar />
      <Switch>
        <Route path='/' exact component={Home} />
        <Route path='/tarot' component={Tarot} />
        <Route path='/horoscope' component={Horoscope} />
-       {/* <Route exact path="/horoscope/:value" component={Horoscope} /> */}
-       <Route path='/Donate' component={Donate} />
+       <Route path='/donate' component={Donate} />
        <Route path='/sign-up' component={SignUp} />
      </Switch>
      </Router>
+     </Store>
     </>
   );
 }

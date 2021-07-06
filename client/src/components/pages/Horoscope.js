@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DailyHoroscope from "../DailyHoroscope";
+import { Context } from '../../Store';
 // import ZodiacSearch from "../FindZodiac";
 import "../../App.css";
 // import { useParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import "../../App.css";
 function Horoscope() {
   const [sign] = useState([
     {
-        zodiac: "Aries",
+        zodiac: "aries",
         icon: "",
         value: 0
     },
@@ -70,20 +71,32 @@ function Horoscope() {
     },
   ]);
 
- const [currentSign, setCurrentSign] = useState(null);
+
+ const [currentSign, setCurrentSign] = useState('');
+ const [state, setState] = useContext(Context);
 //  const { value } = useParams();
- const handleButton = event => {
-     const { sign, value } = event.target;
+// console.log(state.zodiacsign);
 
-     setCurrentSign({
-         ...currentSign,
-         [sign]: value
-     });
+//bring back in for horoscope
+// useEffect(() => {
+//  document.button.onClick= handleButton(e)
+// }, [])
+
+const handleButton = event => {
+
+    setState({
+        
+        "zodiacsign" : event.target.value
+     } )
+     
+    //  console.log(sign.zodiac)
+    //  console.log(state.zodiacsign)
  };
-
 
   return (
     <div>
+      <h1 className="horoscope">HOROSCOPE</h1>
+      <h2>Click your sign to read your daily horoscope</h2>
        <div className='horoscope-container'>
             <video src="/videos/Astro.mp4" autoPlay loop muted />
             <h1>Horoscope</h1>
@@ -91,12 +104,14 @@ function Horoscope() {
       {/* <ZodiacSearch /> */}
       {/* e.target value and map */}
       {sign.map((sign) => (
-          <button onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+          <button key={sign.value} value={sign.zodiac} onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+          
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}
+      <DailyHoroscope sign={state.zodiacsign} />
     </div>
-  );
+  )
+  
 }
-
 
 export default Horoscope;
