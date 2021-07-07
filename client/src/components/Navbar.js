@@ -25,7 +25,17 @@ function Navbar() {
   }, []);
 
   window.addEventListener("resize", showButton);
-
+  
+if (Auth.loggedIn()){
+      return (
+    <li className="nav-item">
+    {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+    <a href="/" onClick={() => Auth.logout()}>
+      Logout
+    </a>
+  </li>   
+  );       
+}else{
   return (
     <>
       <nav className="navbar">
@@ -70,18 +80,13 @@ function Navbar() {
                 Log In
               </Link>
             </li>
-            <li className="nav-item">
-              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-              <a href="/" onClick={() => Auth.logout()}>
-                Logout
-              </a>
-            </li>
           </ul>
           {button && <Button2 buttonStyle="btn--outline">Log In</Button2>}
         </div>
       </nav>
     </>
   );
+}
 }
 
 export default Navbar;
