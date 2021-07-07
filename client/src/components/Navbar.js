@@ -26,6 +26,7 @@ function Navbar() {
 
   window.addEventListener("resize", showButton);
 
+if (Auth.loggedIn()) {
   return (
     <>
       <nav className="navbar">
@@ -61,7 +62,7 @@ function Navbar() {
                             Donate
                         </Link>
                     </li> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/login"
                 className="nav-links-mobile"
@@ -69,19 +70,72 @@ function Navbar() {
               >
                 Log In
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-              <a href="/" onClick={() => Auth.logout()}>
+              <a href="/" className='nav-links' onClick={() => Auth.logout()}>
                 Logout
               </a>
             </li>
           </ul>
-          {button && <Button2 buttonStyle="btn--outline">Log In</Button2>}
+          {/* {button && <Button2 buttonStyle="btn--outline">Log In</Button2>} */}
         </div>
       </nav>
     </>
   );
+} else {
+    return (
+        <>
+          <nav className="navbar">
+            <div className="navbar-container">
+              <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                FATE <i className="fas fa-moon" />
+              </Link>
+              <div className="menu-icon" onClick={handleClick}>
+                <i className={click ? "fas fa-times" : "fas fa-bars"} />
+              </div>
+              <ul className={click ? "nav-menu active" : "nav-menu"}>
+                <li className="nav-item">
+                  <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/tarot" className="nav-links" onClick={closeMobileMenu}>
+                    Tarot
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    to="/horoscope"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    Horoscope
+                  </Link>
+                </li>
+                {/* <li className='nav-item'>
+                            <Link to='/donate' className='nav-links' onClick={closeMobileMenu}>
+                                Donate
+                            </Link>
+                        </li> */}
+                <li className="nav-item">
+                  <Link
+                    to="/login"
+                    className="nav-links-mobile"
+                    onClick={closeMobileMenu}
+                  >
+                    Log In
+                  </Link>
+                </li>
+              </ul>
+              {button && <Button2 buttonStyle="btn--outline">Log In</Button2>}
+            </div>
+          </nav>
+        </>
+      );
+}
+
 }
 
 export default Navbar;
