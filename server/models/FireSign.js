@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const currentDate = new Date()
 
 const fireSchema = new Schema(
   {
-    thoughtText: {
+    fireMessage: {
       type: String,
       required: 'You need to leave a thought!',
       minlength: 1,
@@ -12,7 +12,7 @@ const fireSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: (createdAtVal) => currentDate.getDate(createdAtVal)
     },
     username: {
       type: String,

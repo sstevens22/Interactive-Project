@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const currentDate = new Date()
 
 const earthSchema = new Schema(
   {
-    thoughtText: {
+    earthMessage: {
       type: String,
       required: 'You need to leave a thought!',
       minlength: 1,
@@ -12,7 +12,7 @@ const earthSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: (createdAtVal) => currentDate.getDate(createdAtVal)
     },
     username: {
       type: String,
