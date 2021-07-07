@@ -11,34 +11,34 @@ function Cards() {
             <ul className='cards__items'>
               <CardItem
                 src='images/zodiacback2.jpg'
-                text='Explore the hidden waterfall deep inside the Amazon Jungle'
-                label='Adventure'
-                path='/services'
+                text='Receive your very own tarot card reading'
+                label='Divination'
+                path='/tarot'
               />
               <CardItem
                 src='images/zodiacback3.jpg'
-                text='Travel through the Islands of Bali in a Private Cruise'
-                label='Luxury'
-                path='/services'
+                text='Get an in-depth look at your own personal zodiac sign'
+                label='Self Discovery'
+                path='/horoscope'
               />
             </ul>
             <ul className='cards__items'>
               <CardItem
                 src='images/zodiacback4.jpg'
-                text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
+                text='Learn about your personal sun sign'
                 label='Mystery'
-                path='/services'
+                path='/horoscope'
               />
               <CardItem
                 src='images/zodiacback5.jpg'
-                text='Experience Football on Top of the Himilayan Mountains'
-                label='Adventure'
-                path='/products'
+                text='Check out the mechanics of Tarot card reading'
+                label='Exploration'
+                path='/tarot'
               />
               <CardItem
                 src='images/zodiacback6.jpg'
-                text='Ride through the Sahara Desert on a guided camel tour'
-                label='Adrenaline'
+                text='Become a member and get your own personalized tarot card readings and explore your horoscope'
+                label='Join us!!'
                 path='/sign-up'
               />
             </ul>
