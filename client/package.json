@@ -1,7 +1,6 @@
 {
   "name": "interactive-project",
   "version": "0.1.0",
-  "proxy": "http://localhost:3001",
   "private": true,
   "main": "server.js",
   "dependencies": {
