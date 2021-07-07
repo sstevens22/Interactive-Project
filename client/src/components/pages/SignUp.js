@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../../utils/mutations';
 // import '../HeroSection.css';
-import Auth from '../../utils/auth';
+import Auth from '../../utils/auth'
 
 const SignUp = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
@@ -33,7 +33,7 @@ const SignUp = () => {
       console.error(e);
     }
   }; 
-      
+
     return (
         <div className='signup-container'>
             <video src="/videos/Astro.mp4" autoPlay loop muted />
