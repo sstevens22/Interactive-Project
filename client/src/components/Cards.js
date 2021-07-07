@@ -5,7 +5,7 @@ import './Cards.css';
 function Cards() {
     return (
       <div className='cards'>
-        <h1>Check these out!</h1>
+        <h1>Check us out!</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
@@ -25,19 +25,19 @@ function Cards() {
             <ul className='cards__items'>
               <CardItem
                 src='images/zodiacback4.jpg'
-                text='Learn about your personal sun sign'
+                text='Discover your own personal sun sign and its meaning'
                 label='Mystery'
                 path='/horoscope'
               />
               <CardItem
                 src='images/zodiacback5.jpg'
-                text='Check out the mechanics of Tarot card reading'
+                text='Check out the mechanics of tarot card reading, learn your future'
                 label='Exploration'
                 path='/tarot'
               />
               <CardItem
                 src='images/zodiacback6.jpg'
-                text='Become a member and get your own personalized tarot card readings and explore your horoscope'
+                text='Become a member, get your tarot card readings and horoscope'
                 label='Join us!!'
                 path='/sign-up'
               />
