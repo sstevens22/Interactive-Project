@@ -6,7 +6,7 @@
 
 >[Link to the website- Find your Fate](https://fate-readings.herokuapp.com/)
 
->Created by Ashley Shivver, Krista McPherson, Sheldon Stevens, & Sheila Kiprotich
+>Created by Ashley Shivvers, Krista McPherson, Sheldon Stevens, & Sheila Kiprotich
 
 >This project is a Full Stack MERN application that allows users to explore the world of astrology. Explore your fate by getting a Tarot Readings and Daily Horoscopes. 
 
