@@ -48,19 +48,7 @@ const resolvers = {
         fireSigns: async (parent, { username }) => {
             const params = username ? { username } : {};
             return FireSign.find(params).sort({ createdAt: -1 });
-        },
-        waterSigns: async (parent, { _id }) => {
-          return WaterSign.findOne({ _id });
-        },
-        earthSigns: async (parent, { _id }) => {
-          return EarthSign.findOne({ _id });
-        },
-        airSigns: async (parent, { _id }) => {
-          return AirSign.findOne({ _id });
-        },
-        fireSigns: async (parent, { _id }) => {
-          return fireSign.findOne({ _id });
-        },
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {

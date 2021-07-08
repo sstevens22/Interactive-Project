@@ -41,10 +41,10 @@ type Query {
     users: [User]
     user(username: String!): User
     waterSigns(username: String): [WaterSign]
+    waterSign(_id: ID!): WaterSign
     earthSigns(username: String): [EarthSign]
     airSigns(username: String): [AirSign]
     fireSigns(username: String): [FireSign]
-    waterSign(_id: ID!): WaterSign
     earthSign(_id: ID!): EarthSign
     airSign(_id: ID!): AirSign
     fireSign(_id: ID!): FireSign

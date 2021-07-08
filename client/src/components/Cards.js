@@ -13,7 +13,7 @@ function Cards() {
                 src='images/zodiacback2.jpg'
                 text='Receive your very own tarot card reading'
                 label='Divination'
-                path='/tarot'
+                path='/water'
               />
               <CardItem
                 src='images/zodiacback3.jpg'
