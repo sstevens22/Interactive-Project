@@ -23,9 +23,6 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
-<<<<<<< HEAD
-
-=======
         waterSigns: [
           {
             type: Schema.Types.ObjectId,
@@ -50,7 +47,6 @@ const userSchema = new Schema(
             ref: 'EarthSign'
           }
         ],
->>>>>>> ashley
         createdAt:{
             type: Date,
             default: Date.now,
