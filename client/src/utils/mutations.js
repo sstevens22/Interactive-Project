@@ -21,3 +21,41 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     }
   }
   `;
+
+  export const ADD_WATERSIGN = gql`
+  mutation addWaterSign($waterMessage: String!) {
+    addWaterSign(waterMessage: $waterMessage) {
+      waterMessage
+      createdAt
+      username
+    }
+  }
+  `;
+
+  export const ADD_EARTHSIGN = gql`
+  mutation addEarthSign($earthMessage: String!) {
+    addEarthSign(earthMessage: $earthMessage) {
+      earthMessage
+      createdAt
+      username
+    }
+  }
+  `;
+  export const ADD_AIRSIGN = gql`
+  mutation addAirSign($airMessage: String!) {
+    addAirSign(airMessage: $airMessage) {
+      airMessage
+      createdAt
+      username
+    }
+  }
+  `;
+  export const ADD_FIRESIGN = gql`
+  mutation addFireSign($fireMessage: String!) {
+    addFireSign(fireMessage: $fireMessage) {
+      fireMessage
+      createdAt
+      username
+    }
+  }
+  `;

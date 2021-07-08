@@ -2,25 +2,25 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 type WaterSign {
-    thoughtText: String
+    waterMessage: String
     createdAt: String
     username: String
 }
 
 type EarthSign {
-    thoughtText: String
+    earthMessage: String
     createdAt: String
     username: String
 }
 
 type AirSign {
-    thoughtText: String
+    airMessage: String
     createdAt: String
     username: String
 }
 
 type FireSign {
-    thoughtText: String
+    fireMessage: String
     createdAt: String
     username: String
 }
@@ -41,24 +41,22 @@ type Query {
     users: [User]
     user(username: String!): User
     waterSigns(username: String): [WaterSign]
+    waterSign(_id: ID!): WaterSign
     earthSigns(username: String): [EarthSign]
     airSigns(username: String): [AirSign]
     fireSigns(username: String): [FireSign]
-    waterSign(_id: ID!): WaterSign
     earthSign(_id: ID!): EarthSign
     airSign(_id: ID!): AirSign
     fireSign(_id: ID!): FireSign
-
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addWaterSign(waterSignText: String!): WaterSign
-    addEarthSign(earthSignText: String!): EarthSign
-    addAirSign(airSignText: String!): AirSign
-    addFireSign(fireSignText: String!): FireSign
-
+    addWaterSign(waterMessage: String!): WaterSign
+    addEarthSign(earthMessage: String!): EarthSign
+    addAirSign(airMessage: String!): AirSign
+    addFireSign(fireMessage: String!): FireSign
 }
 
 type Auth {

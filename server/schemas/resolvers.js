@@ -77,7 +77,7 @@ const resolvers = {
           addWaterSign: async (parent, args, context) => {
             if(context.user) {
               const waterSign = await WaterSign.create({ ...args, username: context.user.username });
-    
+
               await User.findByIdAndUpdate(
                 {_id: context.user._id },
                 { $push: { waterSigns: waterSign._id } },
@@ -113,7 +113,7 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!')
           },
-          addEarthSign: async (parent, args, context) => {
+          addFireSign: async (parent, args, context) => {
             if(context.user) {
               const fireSign = await FireSign.create({ ...args, username: context.user.username });
     
