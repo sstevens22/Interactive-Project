@@ -10,13 +10,13 @@ function Cards() {
           <div className='cards__wrapper'>
             <ul className='cards__items'>
               <CardItem
-                src='images/zodiacback2.jpg'
+                src='images/water.jpg'
                 text='Are you a Water Sign? Join your fellow Water signs for a chat!'
                 label='Water Chat'
                 path='/water'
               />
               <CardItem
-                src='images/zodiacback3.jpg'
+                src='images/earthele.jpg'
                 text='Are you an Earth Sign? Join your fellow Earth signs for a chat!'
                 label='Earth Chat'
                 path='/earth'
@@ -24,13 +24,13 @@ function Cards() {
             </ul>
             <ul className='cards__items'>
               <CardItem
-                src='images/zodiacback4.jpg'
+                src='images/air.png'
                 text='Are you an Air Sign? Join your fellow Air signs for a chat!'
                 label='Air Chat'
                 path='/air'
               />
               <CardItem
-                src='images/zodiacback5.jpg'
+                src='images/fireele.jpg'
                 text='Are you a Fire Sign? Join your fellow Fire signs for a chat!'
                 label='Fire Chat'
                 path='/fire'
