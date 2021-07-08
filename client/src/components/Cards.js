@@ -5,40 +5,40 @@ import './Cards.css';
 function Cards() {
     return (
       <div className='cards'>
-        <h1>Check these out!</h1>
+        <h1>Check us out!</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
               <CardItem
                 src='images/zodiacback2.jpg'
-                text='Explore the hidden waterfall deep inside the Amazon Jungle'
-                label='Adventure'
-                path='/services'
+                text='Are you a Water Sign? Join your fellow Water signs for a chat!'
+                label='Water Chat'
+                path='/water'
               />
               <CardItem
                 src='images/zodiacback3.jpg'
-                text='Travel through the Islands of Bali in a Private Cruise'
-                label='Luxury'
-                path='/services'
+                text='Are you an Earth Sign? Join your fellow Earth signs for a chat!'
+                label='Earth Chat'
+                path='/earth'
               />
             </ul>
             <ul className='cards__items'>
               <CardItem
                 src='images/zodiacback4.jpg'
-                text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-                label='Mystery'
-                path='/services'
+                text='Are you an Air Sign? Join your fellow Air signs for a chat!'
+                label='Air Chat'
+                path='/air'
               />
               <CardItem
                 src='images/zodiacback5.jpg'
-                text='Experience Football on Top of the Himilayan Mountains'
-                label='Adventure'
-                path='/products'
+                text='Are you a Fire Sign? Join your fellow Fire signs for a chat!'
+                label='Fire Chat'
+                path='/fire'
               />
               <CardItem
                 src='images/zodiacback6.jpg'
-                text='Ride through the Sahara Desert on a guided camel tour'
-                label='Adrenaline'
+                text='Become a member, get your tarot card readings and horoscope'
+                label='Join us!!'
                 path='/sign-up'
               />
             </ul>
