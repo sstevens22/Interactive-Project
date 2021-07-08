@@ -23,6 +23,34 @@ const userSchema = new Schema(
             required: true,
             minlength: 5
         },
+<<<<<<< HEAD
+
+=======
+        waterSigns: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: 'WaterSign'
+          }
+        ],
+        fireSigns: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: 'FireSign'
+          }
+        ],
+        airSigns: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: 'airSign'
+          }
+        ],
+        earthSigns: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: 'EarthSign'
+          }
+        ],
+>>>>>>> ashley
         createdAt:{
             type: Date,
             default: Date.now,
@@ -67,3 +95,28 @@ module.exports = User;
 //         ref: 'Horoscope'
 //     }
 // ]
+
+// waterSigns: [
+//   {
+//     type: Schema.Types.ObjectId,
+//     ref: 'WaterSign'
+//   }
+// ],
+// fireSigns: [
+//   {
+//     type: Schema.Types.ObjectId,
+//     ref: 'FireSign'
+//   }
+// ],
+// airSigns: [
+//   {
+//     type: Schema.Types.ObjectId,
+//     ref: 'airSign'
+//   }
+// ],
+// earthSigns: [
+//   {
+//     type: Schema.Types.ObjectId,
+//     ref: 'EarthSign'
+//   }
+// ],

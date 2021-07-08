@@ -10,7 +10,7 @@ import "../../App.css";
 function Horoscope() {
   const [sign] = useState([
     {
-        zodiac: "aries",
+        zodiac: "Aries",
         icon: "",
         value: 0
     },
