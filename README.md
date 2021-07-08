@@ -2,7 +2,7 @@
 
 ## About The Project
 
-![Fate Screen Shot](./public/images/fate-screenshot.jpg)
+![Fate Screen Shot](./client/public/images/fate-screenshot.jpg)
 
 >[Link to the website- Find your Fate](https://fate-readings.herokuapp.com/)
 
