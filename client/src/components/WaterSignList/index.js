@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../App.css';
 
 const WaterSignList = ({ waterSigns, title }) => {
@@ -12,7 +11,7 @@ const WaterSignList = ({ waterSigns, title }) => {
       <h3>{title}</h3>
       {waterSigns &&
         waterSigns.map(waterSign => (
-          <div key={waterSign._id} className="message">
+          <div key={waterSign._id} className="message-water">
               <h2
                 to={`/profile/${waterSign.username}`}
                 style={{ fontWeight: 700 }}

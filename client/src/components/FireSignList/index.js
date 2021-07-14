@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const FireSignList = ({ fireSigns, title }) => {
   if (!fireSigns.length) {
@@ -11,21 +11,19 @@ const FireSignList = ({ fireSigns, title }) => {
       <h3>{title}</h3>
       {fireSigns &&
         fireSigns.map(fireSign => (
-          <div key={fireSign._id} className="card mb-3">
-            <p className="card-header">
-              <Link
+          <div key={fireSign._id} className="message-fire">
+              <h2
                 to={`/profile/${fireSign.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="card-header"
               >
                 {fireSign.username}
-              </Link>{' '}
-              The following Messages {fireSign.createdAt}
-            </p>
+              </h2>{' '}
+              Messaged the chat room: {fireSign.createdAt}
             <div className="card-body">
-              <Link to={`/fireSign/${fireSign._id}`}>
+              <h1 to={`/fireSign/${fireSign._id}`}>
                 <p>{fireSign.fireMessage}</p>
-              </Link>
+              </h1>
             </div>
           </div>
         ))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const AirSignList = ({ airSigns, title }) => {
   if (!airSigns.length) {
@@ -11,21 +11,19 @@ const AirSignList = ({ airSigns, title }) => {
       <h3>{title}</h3>
       {airSigns &&
         airSigns.map(airSign => (
-          <div key={airSign._id} className="card mb-3">
-            <p className="card-header">
-              <Link
+          <div key={airSign._id} className="message-air">
+              <h2
                 to={`/profile/${airSign.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="card-header"
               >
                 {airSign.username}
-              </Link>{' '}
-              The following Messages {airSign.createdAt}
-            </p>
+              </h2>{' '}
+              Messaged the chat room: {airSign.createdAt}
             <div className="card-body">
-              <Link to={`/airSign/${airSign._id}`}>
+              <h1 to={`/airSign/${airSign._id}`}>
                 <p>{airSign.airMessage}</p>
-              </Link>
+              </h1>
             </div>
           </div>
         ))}

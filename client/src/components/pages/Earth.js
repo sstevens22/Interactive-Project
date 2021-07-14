@@ -15,11 +15,6 @@ const Earth = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
-        {loggedIn && (
-          <div className="col-12 mb-3">
-            <EarthSignForm />
-          </div>
-        )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
@@ -27,6 +22,11 @@ const Earth = () => {
             <EarthSignList earthSigns={earthSigns} title="Get to know your fellow earth Signs!" />
           )}
         </div>
+        {loggedIn && (
+          <div className="textarea-format">
+            <EarthSignForm />
+          </div>
+        )}
       </div>
     </main>
   );

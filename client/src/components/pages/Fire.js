@@ -15,11 +15,6 @@ const Fire = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
-        {loggedIn && (
-          <div className="col-12 mb-3">
-            <FireSignForm />
-          </div>
-        )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
@@ -27,6 +22,11 @@ const Fire = () => {
             <FireSignList fireSigns={fireSigns} title="Get to know your fellow fire Signs!" />
           )}
         </div>
+        {loggedIn && (
+          <div className="textarea-format">
+            <FireSignForm />
+          </div>
+        )}
       </div>
     </main>
   );

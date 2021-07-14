@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const EarthSignList = ({ earthSigns, title }) => {
   if (!earthSigns.length) {
@@ -11,21 +11,19 @@ const EarthSignList = ({ earthSigns, title }) => {
       <h3>{title}</h3>
       {earthSigns &&
         earthSigns.map(earthSign => (
-          <div key={earthSign._id} className="card mb-3">
-            <p className="card-header">
-              <Link
+          <div key={earthSign._id} className="message-earth">
+              <h2
                 to={`/profile/${earthSign.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="card-header"
               >
                 {earthSign.username}
-              </Link>{' '}
-              The following Messages {earthSign.createdAt}
-            </p>
+              </h2>{' '}
+              Messaged the chat room: {earthSign.createdAt}
             <div className="card-body">
-              <Link to={`/earthSign/${earthSign._id}`}>
+              <h1 to={`/earthSign/${earthSign._id}`}>
                 <p>{earthSign.earthMessage}</p>
-              </Link>
+              </h1>
             </div>
           </div>
         ))}

@@ -51,7 +51,7 @@ const WaterSignForm = () => {
   };
 
   return (
-    <div>
+    <div className= "message-div">
       <p className={`${characterCount === 280 || error ? 'text-error' : ''}`}>
         Character Count: {characterCount}/280
         {error && <span>Something went wrong...</span>}
@@ -59,7 +59,7 @@ const WaterSignForm = () => {
       <form
         onSubmit={handleFormSubmit}
       >
-        <button type="submit">
+        <button className= "submit-message-button" type="submit">
           Submit
         </button>
         <textarea
