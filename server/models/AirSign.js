@@ -12,7 +12,7 @@ const airSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (createdAtVal) => currentDate.getDate(createdAtVal)
+      get: (createdAtVal) => currentDate.toLocaleDateString(createdAtVal)
     },
     username: {
       type: String,

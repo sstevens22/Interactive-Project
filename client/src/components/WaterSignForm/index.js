@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../../App.css';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_WATERSIGN } from '../../utils/mutations';
 import { QUERY_WATERSIGN } from '../../utils/queries';
@@ -52,23 +52,22 @@ const WaterSignForm = () => {
 
   return (
     <div>
-      <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
+      <p className={`${characterCount === 280 || error ? 'text-error' : ''}`}>
         Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
+        {error && <span>Something went wrong...</span>}
       </p>
       <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
-        <textarea
-          placeholder="Here's a message in chat..."
-          value={waterMessage}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
+        <button type="submit">
           Submit
         </button>
+        <textarea
+          placeholder="Lets message the water chat room!"
+          value={waterMessage}
+          className="chat-textarea"
+          onChange={handleChange}
+        ></textarea>
       </form>
     </div>
   );

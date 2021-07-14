@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../App.css';
 
 const WaterSignList = ({ waterSigns, title }) => {
   if (!waterSigns.length) {
@@ -11,21 +12,19 @@ const WaterSignList = ({ waterSigns, title }) => {
       <h3>{title}</h3>
       {waterSigns &&
         waterSigns.map(waterSign => (
-          <div key={waterSign._id} className="card mb-3">
-            <p className="card-header">
-              <Link
+          <div key={waterSign._id} className="message">
+              <h2
                 to={`/profile/${waterSign.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="card-header"
               >
                 {waterSign.username}
-              </Link>{' '}
-              The following Messages {waterSign.createdAt}
-            </p>
+              </h2>{' '}
+              Messaged the chat room: {waterSign.createdAt}
             <div className="card-body">
-              <Link to={`/waterSign/${waterSign._id}`}>
+              <h1 to={`/waterSign/${waterSign._id}`}>
                 <p>{waterSign.waterMessage}</p>
-              </Link>
+              </h1>
             </div>
           </div>
         ))}

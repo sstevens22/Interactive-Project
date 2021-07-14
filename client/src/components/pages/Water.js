@@ -15,11 +15,6 @@ const Water = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
-        {loggedIn && (
-          <div className="col-12 mb-3">
-            <WaterSignForm />
-          </div>
-        )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
@@ -27,6 +22,11 @@ const Water = () => {
             <WaterSignList waterSigns={waterSigns} title="Get to know your fellow water Signs!" />
           )}
         </div>
+        {loggedIn && (
+          <div className="textarea-format">
+            <WaterSignForm />
+          </div>
+        )}
       </div>
     </main>
   );

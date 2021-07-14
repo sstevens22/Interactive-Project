@@ -8,7 +8,8 @@
 .home,
 .tarot,
 .horoscope,
-.sign-up {
+.sign-up
+.index {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -34,7 +35,7 @@
   font-size: 100px;
 } */
 
-.signup-container, .horoscope-container, .tarot-container, .login-container {
+.signup-container, .horoscope-container, .tarot-container, .login-container, .chat-container {
   /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
   height: 100vh;
   width: 100%;
@@ -58,6 +59,31 @@
   font-size: 32px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+}
+
+.chat-textarea{
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.textarea-format{
+  position: sticky;
+  bottom: -1px;
+}
+
+.message{
+  padding: 10px 14px;
+  background: #68BBE3;
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
 }
 
 @media screen and (max-width: 960px) {
