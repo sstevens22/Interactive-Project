@@ -4,6 +4,9 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_AIRSIGN } from '../../utils/mutations';
 import { QUERY_AIRSIGN } from '../../utils/queries';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+
 const AirSignForm = () => {
   const [airMessage, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -59,9 +62,7 @@ const AirSignForm = () => {
       <form
         onSubmit={handleFormSubmit}
       >
-        <button className= "submit-message-button" type="submit">
-          Submit
-        </button>
+<button className= "submit-message-button" type="submit"><FontAwesomeIcon icon={faCheckCircle} size="3x"/></button>
         <textarea
           placeholder="Lets message the air chat room!"
           value={airMessage}

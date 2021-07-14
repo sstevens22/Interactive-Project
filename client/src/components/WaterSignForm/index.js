@@ -3,6 +3,8 @@ import '../../App.css';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_WATERSIGN } from '../../utils/mutations';
 import { QUERY_WATERSIGN } from '../../utils/queries';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 const WaterSignForm = () => {
   const [waterMessage, setText] = useState('');
@@ -59,9 +61,7 @@ const WaterSignForm = () => {
       <form
         onSubmit={handleFormSubmit}
       >
-        <button className= "submit-message-button" type="submit">
-          Submit
-        </button>
+        <button className= "submit-message-button" type="submit"><FontAwesomeIcon icon={faCheckCircle} size="3x"/></button>
         <textarea
           placeholder="Lets message the water chat room!"
           value={waterMessage}

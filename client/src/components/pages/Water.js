@@ -5,6 +5,8 @@ import WaterSignForm from '../WaterSignForm';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_WATERSIGN } from '../../utils/queries';
+import '../Cards.css';
+
 
 const Water = () => {
   const { loading, data } = useQuery(QUERY_WATERSIGN);
@@ -13,7 +15,7 @@ const Water = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main>
+    <main className= "cards">
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sstevens22/Interactive-Project#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "concurrently": "^6.2.0",
     "if-env": "^1.0.4"
   }

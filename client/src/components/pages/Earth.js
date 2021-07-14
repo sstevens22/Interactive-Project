@@ -1,6 +1,7 @@
 import React from 'react';
 import EarthSignList from '../EarthSignList';
 import EarthSignForm from '../EarthSignForm';
+import '../Cards.css';
 
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
@@ -13,7 +14,7 @@ const Earth = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main>
+    <main className="cards">
       <div className="flex-row justify-space-between">
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (

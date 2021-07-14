@@ -4,6 +4,9 @@ import { useMutation } from '@apollo/react-hooks';
 import { ADD_FIRESIGN } from '../../utils/mutations';
 import { QUERY_FIRESIGN } from '../../utils/queries';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+
 const FireSignForm = () => {
   const [fireMessage, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -60,9 +63,7 @@ const FireSignForm = () => {
       <form
         onSubmit={handleFormSubmit}
       >
-        <button className= "submit-message-button" type="submit">
-          Submit
-        </button>
+<button className= "submit-message-button" type="submit"><FontAwesomeIcon icon={faCheckCircle} size="3x"/></button>
         <textarea
           placeholder="Lets message the fire chat room!"
           value={fireMessage}
