@@ -1,7 +1,6 @@
 import React from 'react';
 import EarthSignList from '../EarthSignList';
 import EarthSignForm from '../EarthSignForm';
-import '../Cards.css';
 
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
