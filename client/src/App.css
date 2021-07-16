@@ -97,6 +97,15 @@
   bottom: -1px;
 }
 
+.message-other{
+  padding: 10px 14px;
+  background: #eff2f3;
+  margin: 10px 30px;
+  border-radius: 9px;
+  position: relative;
+  color:rgba(2, 1, 1, 0.2);
+}
+
 .message-water{
   padding: 10px 14px;
   background: #68BBE3;

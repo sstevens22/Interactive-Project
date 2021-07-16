@@ -1,17 +1,20 @@
 import React from 'react';
 import '../../App.css';
+import Auth from '../../utils/auth';
+
 
 const AirSignList = ({ airSigns, title }) => {
   if (!airSigns.length) {
     return <h3>No Messages Yet</h3>;
   }
+  const getProfile = Auth.getProfile();
 
   return (
     <div>
       <h3>{title}</h3>
       {airSigns &&
         airSigns.map(airSign => (
-          <div key={airSign._id} className="message-air">
+          <div key={airSign._id} className={getProfile.data.username===airSign.username ? "message-air" : "message-other"}>
               <h2
                 to={`/profile/${airSign.username}`}
                 style={{ fontWeight: 700 }}
