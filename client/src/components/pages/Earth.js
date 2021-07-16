@@ -13,13 +13,14 @@ const Earth = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main className="cards">
-      <div className="flex-row justify-space-between">
+    <main className= "cards-main-chat-format">
+      <h1 className="chat-title">This is a special chat room made for Virgos, Taurus, and Capricorns!!</h1>
+      <div>
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <EarthSignList earthSigns={earthSigns} title="Get to know your fellow earth Signs!" />
+            <EarthSignList earthSigns={earthSigns}/>
           )}
         </div>
         {loggedIn && (

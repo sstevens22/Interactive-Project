@@ -60,13 +60,23 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
+
+.chat-title{
+  font-size: 50px;
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  'Lucida Sans', Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
 .message-div{
   display:inline;
 }
 
 .submit-message-button{
   position:absolute;
-  bottom:10px;
+  bottom:50px;
   right:10px;
 }
 .chat-textarea{

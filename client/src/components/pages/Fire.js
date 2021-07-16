@@ -14,13 +14,14 @@ const Fire = () => {
   const loggedIn = Auth.loggedIn();
 
   return (
-    <main className="cards">
-      <div className="flex-row justify-space-between">
+    <main className= "cards-main-chat-format">
+      <h1 className="chat-title">This is a special chat room made for Aries, Leo, and Sagittarius!!</h1>
+      <div>
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <FireSignList fireSigns={fireSigns} title="Get to know your fellow fire Signs!" />
+            <FireSignList fireSigns={fireSigns}/>
           )}
         </div>
         {loggedIn && (

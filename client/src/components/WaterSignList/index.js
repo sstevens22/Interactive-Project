@@ -1,14 +1,18 @@
 import React from 'react';
 import '../../App.css';
+import Auth from '../../utils/auth';
 
-const WaterSignList = ({ waterSigns, title }) => {
+const WaterSignList = ({ waterSigns }) => {
+
+  const loggedIn = Auth.loggedIn();
+
+
   if (!waterSigns.length) {
     return <h3>No Messages Yet</h3>;
   }
 
   return (
     <div>
-      <h3>{title}</h3>
       {waterSigns &&
         waterSigns.map(waterSign => (
           <div key={waterSign._id} className="message-water">
@@ -18,7 +22,7 @@ const WaterSignList = ({ waterSigns, title }) => {
                 className="card-header"
               >
                 {waterSign.username}
-              </h2>{' '}
+              </h2>
               Messaged the chat room: {waterSign.createdAt}
             <div className="card-body">
               <h1 to={`/waterSign/${waterSign._id}`}>
