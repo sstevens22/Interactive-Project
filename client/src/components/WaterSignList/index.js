@@ -8,7 +8,7 @@ const WaterSignList = ({ waterSigns }) => {
   }
   const getProfile = Auth.getProfile();
     return (    
-    <div>
+    <div className='flex-column'>
     {waterSigns &&
       waterSigns.map(waterSign => (
         <div key={waterSign._id} className={getProfile.data.username===waterSign.username ? "message-water" : "message-other"}>

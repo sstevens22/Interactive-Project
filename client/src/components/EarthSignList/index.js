@@ -10,7 +10,7 @@ const EarthSignList = ({ earthSigns, title }) => {
   const getProfile = Auth.getProfile();
 
   return (
-    <div>
+    <div className='flex-column'>
       <h3>{title}</h3>
       {earthSigns &&
         earthSigns.map(earthSign => (

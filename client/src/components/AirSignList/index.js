@@ -10,7 +10,7 @@ const AirSignList = ({ airSigns, title }) => {
   const getProfile = Auth.getProfile();
 
   return (
-    <div>
+    <div className='flex-column'>
       <h3>{title}</h3>
       {airSigns &&
         airSigns.map(airSign => (

@@ -10,7 +10,7 @@ const FireSignList = ({ fireSigns, title }) => {
   const getProfile = Auth.getProfile();
 
   return (
-    <div>
+    <div className='flex-column'>
       <h3>{title}</h3>
       {fireSigns &&
         fireSigns.map(fireSign => (

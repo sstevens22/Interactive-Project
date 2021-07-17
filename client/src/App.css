@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: 'PT Sans', sans-serif;
+  word-break: break-word;
 }
 
 .home,
@@ -15,6 +16,11 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 /* .tarot {
@@ -104,6 +110,16 @@
   border-radius: 9px;
   position: relative;
   color:rgba(2, 1, 1, 0.2);
+  align-self: flex-end;
+  flex: 0 0 50%;
+  width: calc(50% - 30px);
+  box-sizing: border-box;
+}
+
+.message-air, .message-earth, .message-fire, .message-water{
+  flex: 0 0 50%;
+  width: calc(50% - 30px);
+  box-sizing: border-box;
 }
 
 .message-water{
