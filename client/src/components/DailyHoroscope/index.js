@@ -42,7 +42,7 @@ const [previousSign, setPreviousSign] = useState(state);
   return (
     <div>
         {!currentSign ? <div>Loading</div> : <div>
-       Current Date: {currentSign.date_range} <br />
+       Date Range: {currentSign.date_range} <br />
                   Compatibility: {currentSign.compatibility} <br />
                   Lucky Number: {currentSign.lucky_number} <br />
                   Lucky Time: {currentSign.lucky_time} <br />

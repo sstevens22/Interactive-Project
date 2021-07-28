@@ -102,7 +102,7 @@ const handleButton = event => {
       {/* e.target value and map */}
       <p>
       {sign.map((sign) => (
-          <button key={sign.value} value={sign.zodiac} onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
+          <button className="horoscope-button" key={sign.value} value={sign.zodiac} onClick={(e)=>(handleButton(e))} type="submit">{sign.zodiac}</button>
           
         // <button onClick={DailyHoroscope} type="submit">{sign.zodiac}</button>
       ))}

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function TarotReading({result}) {
   return (
-    <div>
+    <div className="tarot-drawing">
       <h2>Name: {result.name}</h2>
       <p>Type: {result.type}</p>
       <p>Description: {result.desc}</p>

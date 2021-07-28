@@ -266,6 +266,14 @@
   margin-top: -100px;
 }
 
+.horoscope-container > h2 {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
 .horoscope-container > p {
   margin-top: 8px;
   color: #fff;
@@ -274,16 +282,58 @@
     'Lucida Sans', Arial, sans-serif;
 }
 
+.horoscope-button {
+  padding: 10px 24px;
+  font-size: 16px;
+}
+
+.tarot-button {
+  padding: 10px 24px;
+  font-size: 16px;
+}
+
 .tarot-container > h1 {
   color: #fff;
   font-size: 100px;
-  margin-top: -100px;
+  /* margin-top: -100px; */
+}
+
+.tarot-container > h2 {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.tarot-container > h3 {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .tarot-container > p {
   margin-top: 8px;
   color: #fff;
   font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.tarot-drawing > h2 {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.tarot-drawing > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 16px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }

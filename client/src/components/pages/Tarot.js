@@ -50,7 +50,7 @@ export default function Tarot() {
       <div>
         <h2>Past, Present, Future</h2>
         <h3>What do the cards say about your fate?</h3>
-        <button onClick={handleClick} type="submit">
+        <button className="tarot-button" onClick={handleClick} type="submit">
           Find Out
         </button>
       </div>
