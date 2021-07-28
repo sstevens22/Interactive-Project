@@ -46,8 +46,11 @@ export default function Tarot() {
 
   // return <div>{data.cards}</div>;
   return (
-    <div>
-      <div>
+    <div className="tarot-container">
+    <video src="/videos/Astro.mp4" autoPlay loop muted />
+       <h1>Tarot</h1>
+   
+      <div className="tarot-container">
         <h2>Past, Present, Future</h2>
         <h3>What do the cards say about your fate?</h3>
         <button className="tarot-button" onClick={handleClick} type="submit">
@@ -55,7 +58,7 @@ export default function Tarot() {
         </button>
       </div>
       {results && results.cards.map((result) => <TarotReading result={result} />)}
-    </div>
+      </div>
   );
 }
 
